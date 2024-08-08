@@ -12,3 +12,19 @@
     height: 80vh;
     width: 50vw;
 }
+.div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.div > input
+{
+    flex: 4;
+    margin: 4px;
+}
+.div > button
+{
+    flex: 1;
+    margin: 4px;
+}
