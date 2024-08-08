@@ -1,0 +1,14 @@
+.h1
+{
+    text-align: center;
+    margin: 0;
+    padding: 12px 0;
+}
+.article
+{
+    background-color: bisque;
+    border: 1px solid black;
+    box-shadow: inset 0 0 1px black;
+    height: 80vh;
+    width: 50vw;
+}
