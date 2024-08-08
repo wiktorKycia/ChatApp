@@ -1,0 +1,27 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vw;
+    width: 30vw;
+    background-color: lightgreen;
+    border-radius: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input
+{
+    width: 20vw;
+    height: 5vw;
+    font-size: 3vw;
+}
+.button
+{
+    width: 20vw;
+    height: 5vw;
+    font-size: 3vw;
+}
