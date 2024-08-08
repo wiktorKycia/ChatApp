@@ -3,9 +3,9 @@ import CheckIn from "./Components/CheckIn/CheckIn.jsx"
 
 function App() {
     return (
-        <main>
-            <CheckIn />
-        </main>
+        <>
+            <ChatBox />
+        </>
     )
 }
 
