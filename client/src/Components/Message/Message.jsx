@@ -14,11 +14,11 @@ function Message(props) {
 Message.propTypes = {
     text : PropTypes.string,
     author : PropTypes.string,
-    date : PropTypes.instanceOf(Date)
+    date : PropTypes.string
 }
 Message.defaultProps = {
     text : "could not load message",
     author : "could not load author",
-    date : "string"
+    date : new Date().toLocaleTimeString()
 }
 export default Message

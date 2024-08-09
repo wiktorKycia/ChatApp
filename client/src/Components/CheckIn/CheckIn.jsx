@@ -10,7 +10,7 @@ function CheckIn() {
     const setUserName = contextValues[1];
 
 
-    function check()
+    async function check()
     {
         let username = document.getElementById("username");
         let user = username.value;
@@ -20,16 +20,15 @@ function CheckIn() {
         }
         else
         {
-            const addUser = async () => {
-                const newUser = { username: user };
-                const result = await postData('/checkIn', newUser);
+            
+            const newUser = { username: user };
+            const result = await postData('/checkIn', newUser);
                 
-                return result;
-            }
-
-            const result = addUser();
+                
+            
+            
             console.log(result);
-                console.log(result.message);
+            console.log(result.message);
 
             if(result.message == "success"){
                 setIsCheckedIn(true);
