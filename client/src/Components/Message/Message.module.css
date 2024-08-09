@@ -1,0 +1,28 @@
+.message
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 4px;
+}
+.text
+{
+    margin: 0;
+    padding: 8px;
+    background-color: lightgreen;
+    min-height: 24px;
+    min-width: 0;
+    width: fit-content;
+    max-width: 30vw;
+    text-wrap: wrap;
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.date, .author
+{
+    margin: 0;
+    color: gray;
+    font-size: 12px;
+}
