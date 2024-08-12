@@ -1,6 +1,7 @@
 import styles from './CheckIn.module.css'
 import React, {useContext} from 'react'
 import {CheckContext} from '../../App.jsx'
+import { postData } from '../../functions.js';
 
 
 function CheckIn() {
@@ -9,7 +10,7 @@ function CheckIn() {
     const setUserName = contextValues[1];
 
 
-    function check()
+    async function check()
     {
         let username = document.getElementById("username");
         let user = username.value;
@@ -19,8 +20,27 @@ function CheckIn() {
         }
         else
         {
-            setIsCheckedIn(true);
-            setUserName(user);
+            
+            const newUser = { username: user };
+            const result = await postData('/checkIn', newUser);
+                
+                
+            
+            
+            console.log(result);
+            console.log(result.message);
+
+            if(result.message == "success"){
+                setIsCheckedIn(true);
+                setUserName(user);
+            } else if (result.message === "fail") {
+                alert(`User of name ${user} already exists`);
+                setUserName("");
+                username.value = "";
+            } else {
+                alert("Something went wrong. Please try again later");
+            }
+            
         }
     }
 
