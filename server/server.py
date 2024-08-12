@@ -15,6 +15,10 @@ def checkIn():
     else:
         return jsonify({"message": "fail"})
 
+@app.route("/getMessages", methods=["GET"])
+def getMessages():
+    return jsonify({"status": "success", "messages": messages_list})
+
 @app.route("/message", methods=["POST"])
 def message():
     data = request.json
