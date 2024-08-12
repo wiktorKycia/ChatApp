@@ -4,7 +4,7 @@ import styles from './Message.module.css'
 
 function Message({date="could not load date", text="could not load message", author="unknown user", right=false}) {
     return (
-        <div className={styles.message}>
+        <div className={right ? styles.message_right : styles.message_left}>
             <p className={styles.date}>{date}</p>
             <p className={styles.text}>{text}</p>
             <p className={styles.author}>{author}</p>
