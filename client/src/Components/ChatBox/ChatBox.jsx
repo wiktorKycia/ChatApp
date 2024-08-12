@@ -7,6 +7,7 @@ import {UserContext} from '../../App.jsx'
 
 function ChatBox() {
     const [messages, setMessages] = useState([]);
+    const user = useContext(UserContext);
     
     async function sendMessage() {
         const message = document.querySelector('input').value;
@@ -14,7 +15,7 @@ function ChatBox() {
 
         const result = await postData('/message', {
             text: message,
-            author: useContext(UserContext),
+            author: user,
             date: new Date().toLocaleTimeString()
         });
         console.log(result);
