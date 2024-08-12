@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import styles from "./ChatBox.module.css"
 import Message from "../Message/Message.jsx"
 import {fetchData, postData} from "../../functions.js"
+import {UserContext} from '../../App.jsx'
+
 
 function ChatBox() {
     const [messages, setMessages] = useState([]);
@@ -9,10 +11,10 @@ function ChatBox() {
     async function sendMessage() {
         const message = document.querySelector('input').value;
         document.querySelector('input').value = '';
-        
+
         const result = await postData('/message', {
             text: message,
-            author: 'user',
+            author: useContext(UserContext),
             date: new Date().toLocaleTimeString()
         });
         console.log(result);
