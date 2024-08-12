@@ -3,7 +3,13 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 username_list = []
-messages_list = []
+messages_list = [
+    {
+        "author": "admin",
+        "text": "Hello World!",
+        "date": "2022-01-01 00:00:00"
+    }
+]
 
 @app.route("/checkIn", methods=["POST"])
 def checkIn():
@@ -14,6 +20,10 @@ def checkIn():
         return jsonify({"message": "success"})
     else:
         return jsonify({"message": "fail"})
+
+@app.route("/getMessages", methods=["GET"])
+def getMessages():
+    return jsonify({"status": "success", "messages": messages_list})
 
 @app.route("/message", methods=["POST"])
 def message():

@@ -7,7 +7,8 @@ export default defineConfig({
     server: {
         proxy: {
             '/checkIn': 'http://localhost:5000',
-            '/message': 'http://localhost:5000'
+            '/message': 'http://localhost:5000',
+            '/getMessages': 'http://localhost:5000'
         }
     }
 })

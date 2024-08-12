@@ -8,7 +8,8 @@ function ChatBox() {
     
     async function getMessages() {
         const result = await fetchData('/getMessages');
-        setMessages(result);
+        console.log(result);
+        setMessages(result.messages);
     }
 
     useEffect(() => {
