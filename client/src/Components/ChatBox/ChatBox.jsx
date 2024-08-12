@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from "./ChatBox.module.css"
+import Message from "./Message.jsx"
 
-function ChatBox(props) {
+function ChatBox() {
     return (
         <main>
             <h1 className={styles.h1}>Main Chat</h1>
             <article className={styles.article}>
-                {props.children}
+                {}
             </article>
             <div className={styles.div}>
                 <input type="text" placeholder='Enter your message here'/>
