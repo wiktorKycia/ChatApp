@@ -46,7 +46,7 @@ function ChatBox() {
             <h1 className={styles.h1}>Main Chat</h1>
             <article className={styles.article}>
                 {messages.map((message, index) => (
-                    <Message key={index} text={message.text} author={message.author} date={message.date} />
+                    <Message key={index} text={message.text} author={message.author} date={message.date} right={message.author === user}/>
                 ))}
             </article>
             <div className={styles.div}>
