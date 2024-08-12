@@ -36,9 +36,9 @@ function ChatBox() {
                 sendMessage();
             }
         })
-        return () => {
-            document.querySelector('input').removeEventListener('keyup')
-        }
+        // return () => {
+        //     document.querySelector('input').removeEventListener('keyup')
+        // }
     }, [])
 
     return (
