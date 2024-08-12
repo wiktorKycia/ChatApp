@@ -28,7 +28,7 @@ def getMessages():
 @app.route("/message", methods=["POST"])
 def message():
     data = request.json
-    messages_list.append(data.message)
+    messages_list.append(data)
     return jsonify({"messages": messages_list})
 
 if __name__ == "__main__":
