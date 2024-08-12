@@ -1,8 +1,16 @@
-.message
+.message_left
 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 8px 4px;
+}
+.message_right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     margin: 8px 4px;
 }
 .text
