@@ -8,13 +8,15 @@ function ChatBox() {
     
     async function sendMessage() {
         const message = document.querySelector('input').value;
-        const result = await postData('/sendMessage', {
+        document.querySelector('input').value = '';
+        
+        const result = await postData('/message', {
             text: message,
             author: 'user',
             date: new Date().toLocaleTimeString()
         });
         console.log(result);
-        getMessages();
+        setMessages(result.messages);
     }
 
     async function getMessages() {
