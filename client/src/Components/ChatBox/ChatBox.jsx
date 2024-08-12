@@ -11,6 +11,7 @@ function ChatBox() {
     
     async function sendMessage() {
         const message = document.querySelector('input').value;
+        if (message == '') return;
         document.querySelector('input').value = '';
 
         const result = await postData('/message', {
@@ -30,6 +31,14 @@ function ChatBox() {
 
     useEffect(() => {
         getMessages()
+        document.querySelector('input').addEventListener('keyup', (event) => {
+            if (event.keyCode === 13) {
+                sendMessage();
+            }
+        })
+        return () => {
+            document.querySelector('input').removeEventListener('keyup')
+        }
     }, [])
 
     return (
@@ -41,7 +50,7 @@ function ChatBox() {
                 ))}
             </article>
             <div className={styles.div}>
-                <input type="text" placeholder='Enter your message here'/>
+                <input type="text" placeholder='Enter your message here' autoFocus/>
                 <button onClick={sendMessage}>Send</button>
             </div>
         </main>
