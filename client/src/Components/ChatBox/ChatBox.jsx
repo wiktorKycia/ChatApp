@@ -3,6 +3,9 @@ import styles from "./ChatBox.module.css"
 import Message from "../Message/Message.jsx"
 import {fetchData, postData} from "../../functions.js"
 import {UserContext} from '../../App.jsx'
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:5000');
 
 
 function ChatBox() {
@@ -36,6 +39,12 @@ function ChatBox() {
                 sendMessage();
             }
         })
+        socket.on('update_messages', (data) => {
+            setMessages(data.messages);
+        });
+        return () => {
+            socket.off('update_members');
+        };
         // return () => {
         //     document.querySelector('input').removeEventListener('keyup')
         // }
