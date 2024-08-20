@@ -54,6 +54,15 @@ body:
       default: 0
     validations:
       required: true
+  - type: dropdown
+    id: bugtype
+    attributes:
+      label: BugType
+      description: Which type of bug have you encountered?
+      options:
+        - styling
+        - client side
+        - server side
   - type: textarea
     id: logs
     attributes:
@@ -68,3 +77,12 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional info
+      description: If you have anything to add more, please tell me!
+      placeholder: ""
+      value: ""
+    validations:
+      required: false
