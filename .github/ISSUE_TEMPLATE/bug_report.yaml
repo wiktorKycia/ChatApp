@@ -82,7 +82,5 @@ body:
     attributes:
       label: Additional info
       description: If you have anything to add more, please tell me!
-      placeholder: ""
-      value: ""
     validations:
       required: false
