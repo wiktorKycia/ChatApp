@@ -4,15 +4,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vw;
-    width: 30vw;
+    padding: 50px;
     background-color: lightgreen;
-    border-radius: 5vw;
+    border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 550ms ease-in-out;
+    transition: all 300ms ease;
 }
 
 .container:hover
@@ -22,8 +21,8 @@
 
 .input, .button
 {
-    width: 50%;
-    height: 2vw;
+    width: 250px;
+    height: 2em;
     font-size: 1.2em;
     margin: 8px;
     padding: 4px;
