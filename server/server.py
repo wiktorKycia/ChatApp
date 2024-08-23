@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -22,7 +22,8 @@ def checkIn():
         username_list.append(user)
         return jsonify({"message": "success"})
     else:
-        return jsonify({"message": "fail"})
+        # return jsonify({"message": "fail"})
+        abort(409, description="Username already taken")
 
 @app.route("/getMessages", methods=["GET"])
 def getMessages():
