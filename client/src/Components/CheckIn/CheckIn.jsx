@@ -20,27 +20,19 @@ function CheckIn() {
         }
         else
         {
-            
             const newUser = { username: user };
-            const result = await postData('/checkIn', newUser);
-                
-                
-            
-            
-            console.log(result);
-            console.log(result.message);
-
-            if(result.message == "success"){
-                setIsCheckedIn(true);
-                setUserName(user);
-            } else if (result.message === "fail") {
+            try{
+                const result = await postData('/checkIn', newUser);
+                if(result.message == "success"){
+                    setIsCheckedIn(true);
+                    setUserName(user);
+                }
+            } catch(e){
                 alert(`User of name ${user} already exists`);
+                console.log(e.message);
                 setUserName("");
                 username.value = "";
-            } else {
-                alert("Something went wrong. Please try again later");
             }
-            
         }
     }
 
