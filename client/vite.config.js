@@ -6,9 +6,9 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {
-            '/checkIn': 'http://localhost:5000',
-            '/message': 'http://localhost:5000',
-            '/getMessages': 'http://localhost:5000'
+            '/checkIn': 'https://chatappserver-wk.azurewebsites.net/',
+            '/message': 'https://chatappserver-wk.azurewebsites.net/',
+            '/getMessages': 'https://chatappserver-wk.azurewebsites.net/'
         }
     },
     build: {          
