@@ -15,6 +15,7 @@ messages_list = [
 ]
 @app.route("/")
 def home():
+    print("hello")
     return "hello world!"
 
 @app.route("/checkIn", methods=["POST"])
