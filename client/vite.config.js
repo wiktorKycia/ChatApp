@@ -10,5 +10,8 @@ export default defineConfig({
             '/message': 'http://localhost:5000',
             '/getMessages': 'http://localhost:5000'
         }
+    },
+    build: {          
+        outDir: 'dist'
     }
 })
