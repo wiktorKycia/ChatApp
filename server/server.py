@@ -13,6 +13,9 @@ messages_list = [
         "date": "2022-01-01 00:00:00"
     }
 ]
+@app.route("/")
+def home():
+    return "hello world!"
 
 @app.route("/checkIn", methods=["POST"])
 def checkIn():
